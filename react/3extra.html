@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script 
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="text/babel">
+    //Crear una variable que tenga su nombre todo en mayuscula
+    //crear una variable que tenga la direccion
+    //crear una funcion que transforme un string en mayuscula en minuscula 
+    //Subir al root 
+    
+    const root = document.getElementById("root");
+
+    const nombre = "WENDY";
+    const direccion = "Urdininea 1791";
+    const stringMinuscula = (palabra) => {
+        return palabra.toLowerCase();
+    }
+
+    const div = (
+        <div>
+            <p>Direccion: {direccion}</p>
+            <p>Nombre: {stringMinuscula(nombre)}</p>
+        </div>
+    );
+
+    ReactDOM.render(div, root);
+       
+    </script>
+</body>
+</html>

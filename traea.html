@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Formulario</title>
+</head>
+<div id="root"> 
+</div>
+<script
+  crossorigin
+  src="https://unpkg.com/react@16/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+<script type="text/babel">
+
+    const Formulario = () => {
+
+        const [nombre, setnombre ] =  React.useState("");
+        const [apellido, setapellido ] =  React.useState("");
+        
+
+       
+        function leerInput(e) {
+            let valorInput= e.target.value; 
+            if(e.target.name === 'nombre') {
+                setnombre(valorInput);
+            }else setapellido(valorInput);      
+            
+        }
+        
+
+        return (
+            
+               <>
+                    <label htmlFor="nombre">Nombre</label>
+                    <input onChange={leerInput} type="text" name="nombre"/>
+
+                    <label htmlFor="apellido">Apellido</label>
+                    <input onChange={leerInput} type="text" name="apellido"/>
+                    <h1>{nombre} {apellido}</h1>
+               </>
+            
+        )
+    }
+
+    const div = (
+        <div>
+            <Formulario />
+        </div>
+    );
+
+    ReactDOM.render(div, document.getElementById("root"));
+
+</script>
+</body>
+</html>
